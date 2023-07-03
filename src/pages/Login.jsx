@@ -25,6 +25,41 @@ export default function Login() {
           <p className="account-text flex justify-center text-neutral-500 text-[14px] font-normal pb-[50px]">
             Enter your credentials to access your account
           </p>
+
+          <div className="flex flex-col mb-5">
+            <label
+              htmlFor="email"
+              className="text-neutral-500 text-[14px] font-medium"
+            >
+              Email
+            </label>
+            <input
+              id="email"
+              name="email"
+              type="email"
+              autoComplete="email"
+              required
+              placeholder="Enter your email"
+              className="border placeholder:text-stone-300 placeholder:font-normal placeholder:text-xs relative bg-white p-2 border-neutral-200"
+            />
+          </div>
+          <div className="flex flex-col">
+            <label
+              htmlFor="password"
+              className="text-neutral-500 text-[14px] font-medium"
+            >
+              Password
+            </label>
+            <input
+              id="password"
+              name="password"
+              type="password"
+              minLength={8}
+              required
+              placeholder="Enter your password"
+              className="border placeholder:text-stone-300 placeholder:font-normal placeholder:text-xs relative bg-white p-2 border-neutral-200"
+            />
+          </div>
         </form>
       </div>
     </div>
