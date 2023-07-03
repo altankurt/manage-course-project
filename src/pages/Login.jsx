@@ -19,6 +19,12 @@ export default function Login() {
               Manage Courses
             </h1>
           </div>
+          <h2 className="signin-title flex justify-center text-black text-[22px] font-semibold uppercase pb-[9px]">
+            Sign In
+          </h2>
+          <p className="account-text flex justify-center text-neutral-500 text-[14px] font-normal pb-[50px]">
+            Enter your credentials to access your account
+          </p>
         </form>
       </div>
     </div>
