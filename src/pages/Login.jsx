@@ -60,6 +60,24 @@ export default function Login() {
               className="border placeholder:text-stone-300 placeholder:font-normal placeholder:text-xs relative bg-white p-2 border-neutral-200"
             />
           </div>
+          <button
+            type="submit"
+            onClick={() => {}}
+            className="signin-button w-[415px] h-11 relative flex justify-center items-center mt-[30px] bg-yellow-500 rounded text-white uppercase mb-[27px]"
+          >
+            Sign In
+          </button>
+          <div className="flex justify-center">
+            <label className="text-neutral-500 text-[14px] font-normal">
+              Forgot your password?{' '}
+              <a
+                href="https://example.com/reset-password"
+                className="text-yellow-500 text-[14px] font-medium underline"
+              >
+                Reset Password
+              </a>
+            </label>
+          </div>
         </form>
       </div>
     </div>
