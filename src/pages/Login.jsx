@@ -5,6 +5,7 @@ export default function Login() {
   const navigate = useNavigate();
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [errorMessage, setErrorMessage] = useState('');
 
   const handleSignIn = e => {
     e.preventDefault();
@@ -12,7 +13,9 @@ export default function Login() {
     if (email === 'example@example.com' && password === 'password') {
       navigate('/dashboard');
     } else {
-      console.log('Giriş başarısız');
+      setErrorMessage(
+        'email: example@example.com ve password: password olarak giriniz'
+      );
     }
   };
 
@@ -79,6 +82,11 @@ export default function Login() {
               onChange={e => setPassword(e.target.value)}
             />
           </div>
+          {errorMessage && (
+            <div className="flex justify-center text-red-500 text-[14px] font-medium mt-2">
+              {errorMessage}
+            </div>
+          )}
           <button
             type="submit"
             onClick={handleSignIn}
