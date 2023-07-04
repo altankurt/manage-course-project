@@ -1,6 +1,21 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 export default function Login() {
+  const navigate = useNavigate();
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+
+  const handleSignIn = e => {
+    e.preventDefault();
+
+    if (email === 'example@example.com' && password === 'password') {
+      navigate('/dashboard');
+    } else {
+      console.log('Giriş başarısız');
+    }
+  };
+
   return (
     <div className="relative w-full h-screen bg-gradient font-fontFamily">
       <div className="login-form flex justify-center items-center h-full">
@@ -41,6 +56,8 @@ export default function Login() {
               required
               placeholder="Enter your email"
               className="border placeholder:text-stone-300 placeholder:font-normal placeholder:text-xs relative bg-white p-2 border-neutral-200"
+              value={email}
+              onChange={e => setEmail(e.target.value)}
             />
           </div>
           <div className="flex flex-col">
@@ -58,11 +75,13 @@ export default function Login() {
               required
               placeholder="Enter your password"
               className="border placeholder:text-stone-300 placeholder:font-normal placeholder:text-xs relative bg-white p-2 border-neutral-200"
+              value={password}
+              onChange={e => setPassword(e.target.value)}
             />
           </div>
           <button
             type="submit"
-            onClick={() => {}}
+            onClick={handleSignIn}
             className="signin-button w-[415px] h-11 relative flex justify-center items-center mt-[30px] bg-yellow-500 rounded text-white uppercase mb-[27px]"
           >
             Sign In
