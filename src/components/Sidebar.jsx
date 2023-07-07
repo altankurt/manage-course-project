@@ -2,15 +2,13 @@ import React from 'react';
 import Logo from './Logo';
 import Profile from './Profile';
 import NavLinks from './NavLinks';
-import Rectangle from './Rectangle';
 
 const Sidebar = () => {
   return (
-    <div className="w-[270px] h-[900px]">
+    <div className="w-[270px] h-screen bg-stone-200">
       <Logo />
       <Profile />
       <NavLinks />
-      <Rectangle />
     </div>
   );
 };
