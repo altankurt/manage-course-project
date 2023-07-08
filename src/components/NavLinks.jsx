@@ -1,11 +1,12 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const NavLinks = () => {
   return (
     <nav className="Navlinks w-[270px]  h-[497px] flex flex-col mt-20 items-center relative">
       <ul>
         <li>
-          <a href="/dashboard/#" className="Home navBtn">
+          <Link to="/dashboard" className="Home navBtn">
             <svg
               width="19"
               height="17"
@@ -26,10 +27,10 @@ const NavLinks = () => {
               </defs>
             </svg>
             <p className="pl-[15px]">Home</p>
-          </a>
+          </Link>
         </li>
         <li>
-          <a href="/dashboard/#" className="Course navBtn">
+          <Link to="/dashboard/course" className="Course navBtn">
             <svg
               width="12"
               height="15"
@@ -55,10 +56,10 @@ const NavLinks = () => {
               </defs>
             </svg>
             <p className="pl-[15px]">Course</p>
-          </a>
+          </Link>
         </li>
         <li>
-          <a href="/dashboard/students" className="Students navBtn">
+          <Link to="/dashboard/students" className="Students navBtn">
             <svg
               width="20"
               height="16"
@@ -72,10 +73,10 @@ const NavLinks = () => {
               />
             </svg>
             <p className="pl-[15px]">Students</p>
-          </a>
+          </Link>
         </li>
         <li>
-          <a href="/dashboard/#" className="Payment navBtn">
+          <Link to="/dashboard/payment" className="Payment navBtn">
             <svg
               width="15"
               height="17"
@@ -89,10 +90,10 @@ const NavLinks = () => {
               />
             </svg>
             <p className="pl-[15px]">Payment</p>
-          </a>
+          </Link>
         </li>
         <li>
-          <a href="/dashboard/#" className="Report navBtn">
+          <Link to="/dashboard/report" className="Report navBtn">
             <svg
               width="13"
               height="17"
@@ -113,10 +114,10 @@ const NavLinks = () => {
               </defs>
             </svg>
             <p className="pl-[15px]">Report</p>
-          </a>
+          </Link>
         </li>
         <li>
-          <a href="/dashboard/#" className="Settings navBtn">
+          <Link to="/dashboard/settings" className="Settings navBtn">
             <svg
               width="15"
               height="17"
@@ -130,10 +131,10 @@ const NavLinks = () => {
               />
             </svg>
             <p className="pl-[15px]">Settings</p>
-          </a>
+          </Link>
         </li>
         <li>
-          <a href="/#" className="Logout navBtn mt-[148px]">
+          <Link to="/#" className="Logout navBtn mt-[148px]">
             <p className="pr-[23px]">Logout</p>
             <svg
               width="17"
@@ -147,7 +148,7 @@ const NavLinks = () => {
                 fill="black"
               />
             </svg>
-          </a>
+          </Link>
         </li>
       </ul>
     </nav>
