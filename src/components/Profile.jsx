@@ -12,7 +12,6 @@ const Profile = () => {
         John Doe
       </h2>
       <div className="text-yellow-500 text-sm font-medium">Admin</div>
-      <div className="" />
     </div>
   );
 };
