@@ -51,7 +51,7 @@ const Dashboard = () => {
           </svg>
         }
         title="Course"
-        backgroundColor="bg-green-200" // Kartın arka plan rengi
+        backgroundColor="bg-fuchsia-50" // Kartın arka plan rengi
         value={50}
       />
       <Card
@@ -70,7 +70,7 @@ const Dashboard = () => {
           </svg>
         }
         title="Payments"
-        backgroundColor="bg-yellow-200" // Kartın arka plan rengi
+        backgroundColor="bg-amber-50"
         value={75}
       />
       <Card
@@ -90,7 +90,7 @@ const Dashboard = () => {
         }
         title="Users"
         value={75}
-        backgroundColor="bg-red-200" // Kartın arka plan rengi
+        backgroundColor="bg-gradient-to-r from-yellow-500 to-amber-300"
       />
     </div>
   );
