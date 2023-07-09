@@ -51,8 +51,7 @@ const Dashboard = () => {
           </svg>
         }
         title="Course"
-        backgroundColor="bg-fuchsia-50" // Kartın arka plan rengi
-        value={50}
+        backgroundColor="bg-fuchsia-50"
       />
       <Card
         icon={

@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from 'react';
 
-function Modal({ children, onClose }) {
+function Modal({ children, isOpen, onClose }) {
   const modalRef = useRef(null);
 
   useEffect(() => {
@@ -16,18 +16,27 @@ function Modal({ children, onClose }) {
       }
     };
 
-    document.addEventListener('mousedown', handleOutsideClick);
-    document.addEventListener('keydown', handleEscapeKey);
+    if (isOpen) {
+      document.addEventListener('mousedown', handleOutsideClick);
+      document.addEventListener('keydown', handleEscapeKey);
+    } else {
+      document.removeEventListener('mousedown', handleOutsideClick);
+      document.removeEventListener('keydown', handleEscapeKey);
+    }
 
     return () => {
       document.removeEventListener('mousedown', handleOutsideClick);
       document.removeEventListener('keydown', handleEscapeKey);
     };
-  }, [onClose]);
+  }, [isOpen, onClose]);
+
+  if (!isOpen) {
+    return null;
+  }
 
   return (
     <div className="modal-overlay">
-      <div ref={modalRef} className="modal">
+      <div className="modal" ref={modalRef}>
         {children}
       </div>
     </div>

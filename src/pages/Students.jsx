@@ -9,6 +9,15 @@ const Students = () => {
   const [students, setStudents] = useState([]);
   const [searchTerm, setSearchTerm] = useState('');
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [formData, setFormData] = useState({
+    id: '',
+    firstName: '',
+    lastName: '',
+    email: '',
+    phone: '',
+    website: '',
+    companyName: '',
+  });
 
   const queryParams = new URLSearchParams(location.search);
   const page = parseInt(queryParams.get('page')) || 1;
@@ -34,6 +43,15 @@ const Students = () => {
   };
 
   const handleAddStudent = () => {
+    setFormData({
+      id: '',
+      firstName: '',
+      lastName: '',
+      email: '',
+      phone: '',
+      website: '',
+      companyName: '',
+    });
     setIsModalOpen(true);
   };
 
@@ -43,9 +61,7 @@ const Students = () => {
 
   const handleDeleteStudent = async id => {
     try {
-      // Öğrenciyi silmek için API'ye DELETE isteği gönderin
       await axios.delete(`https://dummyjson.com/users/${id}`);
-      // Öğrenciyi öğrenci listesinden kaldırın
       setStudents(students.filter(student => student.id !== id));
     } catch (error) {
       console.error(error);
@@ -54,21 +70,49 @@ const Students = () => {
 
   const handleEditStudent = async id => {
     try {
-      // Öğrenciyi düzenlemek için öğrenciyi API'den alın
       const response = await axios.get(`https://dummyjson.com/users/${id}`);
       const editedStudent = response.data;
-      // Düzenlenecek öğrencinin bilgilerini güncelleyin
-      // Örneğin, bir form üzerinde yapılan düzenlemeleri kullanarak editedStudent objesini güncelleyin
-      // editedStudent = { ...editedStudent, ...updatedData };
-      // Güncellenmiş öğrenciyi API'ye PUT veya PATCH isteği ile gönderin
-      await axios.put(`https://dummyjson.com/users/${id}`, editedStudent);
-      // Öğrenci listesini güncelleyin
-      setStudents(
-        students.map(student => (student.id === id ? editedStudent : student))
-      );
+      setFormData({
+        id: editedStudent.id,
+        firstName: editedStudent.firstName,
+        lastName: editedStudent.lastName,
+        email: editedStudent.email,
+        phone: editedStudent.phone,
+        website: editedStudent.website,
+        companyName: editedStudent.company.name,
+      });
+      setIsModalOpen(true);
     } catch (error) {
       console.error(error);
     }
+  };
+
+  const handleSubmit = async e => {
+    e.preventDefault();
+    try {
+      if (formData.id) {
+        await axios.put(`https://dummyjson.com/users/${formData.id}`, formData);
+        setStudents(
+          students.map(student =>
+            student.id === formData.id ? formData : student
+          )
+        );
+      } else {
+        const response = await axios.post(
+          `https://dummyjson.com/users`,
+          formData
+        );
+        const newStudent = response.data;
+        setStudents([...students, newStudent]);
+      }
+      setIsModalOpen(false);
+    } catch (error) {
+      console.error(error);
+    }
+  };
+
+  const handleChange = e => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
   return (
@@ -154,7 +198,63 @@ const Students = () => {
         totalItems={students.length}
       />
       <Modal isOpen={isModalOpen} onClose={handleCloseModal}>
-        {/* Add Student Form */}
+        <form onSubmit={handleSubmit}>
+          <label>
+            First Name:
+            <input
+              type="text"
+              name="firstName"
+              value={formData.firstName}
+              onChange={handleChange}
+            />
+          </label>
+          <label>
+            Last Name:
+            <input
+              type="text"
+              name="lastName"
+              value={formData.lastName}
+              onChange={handleChange}
+            />
+          </label>
+          <label>
+            Email:
+            <input
+              type="text"
+              name="email"
+              value={formData.email}
+              onChange={handleChange}
+            />
+          </label>
+          <label>
+            Phone:
+            <input
+              type="text"
+              name="phone"
+              value={formData.phone}
+              onChange={handleChange}
+            />
+          </label>
+          <label>
+            Website:
+            <input
+              type="text"
+              name="website"
+              value={formData.website}
+              onChange={handleChange}
+            />
+          </label>
+          <label>
+            Company Name:
+            <input
+              type="text"
+              name="companyName"
+              value={formData.companyName}
+              onChange={handleChange}
+            />
+          </label>
+          <button type="submit">Submit</button>
+        </form>
       </Modal>
     </div>
   );
