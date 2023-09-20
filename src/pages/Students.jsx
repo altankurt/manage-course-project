@@ -38,7 +38,7 @@ const Students = () => {
     fetchStudents();
   }, [page]);
 
-  const handleSearch = e => {
+  const handleSearch = (e) => {
     setSearchTerm(e.target.value);
   };
 
@@ -59,16 +59,16 @@ const Students = () => {
     setIsModalOpen(false);
   };
 
-  const handleDeleteStudent = async id => {
+  const handleDeleteStudent = async (id) => {
     try {
       await axios.delete(`https://dummyjson.com/users/${id}`);
-      setStudents(students.filter(student => student.id !== id));
+      setStudents(students.filter((student) => student.id !== id));
     } catch (error) {
       console.error(error);
     }
   };
 
-  const handleEditStudent = async id => {
+  const handleEditStudent = async (id) => {
     try {
       const response = await axios.get(`https://dummyjson.com/users/${id}`);
       const editedStudent = response.data;
@@ -87,13 +87,13 @@ const Students = () => {
     }
   };
 
-  const handleSubmit = async e => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     try {
       if (formData.id) {
         await axios.put(`https://dummyjson.com/users/${formData.id}`, formData);
         setStudents(
-          students.map(student =>
+          students.map((student) =>
             student.id === formData.id ? formData : student
           )
         );
@@ -111,7 +111,7 @@ const Students = () => {
     }
   };
 
-  const handleChange = e => {
+  const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
@@ -149,7 +149,7 @@ const Students = () => {
         <tbody>
           {students
             .filter(
-              student =>
+              (student) =>
                 student.firstName
                   .toLowerCase()
                   .includes(searchTerm.toLowerCase()) ||
@@ -157,7 +157,7 @@ const Students = () => {
                   .toLowerCase()
                   .includes(searchTerm.toLowerCase())
             )
-            .map(student => (
+            .map((student) => (
               <tr key={student.id}>
                 <td className="border w-36 h-36 border-gray-300 px-4 py-2">
                   <img

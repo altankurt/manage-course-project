@@ -4,7 +4,7 @@ import { useLocation } from 'react-router-dom';
 const Pagination = ({ currentPage, pageSize, totalItems }) => {
   const location = useLocation();
 
-  const handlePageChange = page => {
+  const handlePageChange = (page) => {
     const searchParams = new URLSearchParams(location.search);
     searchParams.set('page', page);
     window.location.search = searchParams.toString();
@@ -15,7 +15,7 @@ const Pagination = ({ currentPage, pageSize, totalItems }) => {
 
   return (
     <div className="flex justify-center mt-4">
-      {pages.map(page => (
+      {pages.map((page) => (
         <button
           key={page}
           className={`px-2 py-1 mx-1 border rounded ${

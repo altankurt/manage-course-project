@@ -7,7 +7,7 @@ export default function Login() {
   const [password, setPassword] = useState('');
   const [errorMessage, setErrorMessage] = useState('');
 
-  const handleSignIn = e => {
+  const handleSignIn = (e) => {
     e.preventDefault();
 
     if (email === 'example@example.com' && password === 'password') {
@@ -60,7 +60,7 @@ export default function Login() {
               placeholder="Enter your email"
               className="border placeholder:text-stone-300 placeholder:font-normal placeholder:text-xs relative bg-white p-2 border-neutral-200"
               value={email}
-              onChange={e => setEmail(e.target.value)}
+              onChange={(e) => setEmail(e.target.value)}
             />
           </div>
           <div className="flex flex-col">
@@ -79,7 +79,7 @@ export default function Login() {
               placeholder="Enter your password"
               className="border placeholder:text-stone-300 placeholder:font-normal placeholder:text-xs relative bg-white p-2 border-neutral-200"
               value={password}
-              onChange={e => setPassword(e.target.value)}
+              onChange={(e) => setPassword(e.target.value)}
             />
           </div>
           {errorMessage && (

@@ -4,13 +4,13 @@ function Modal({ children, isOpen, onClose }) {
   const modalRef = useRef(null);
 
   useEffect(() => {
-    const handleOutsideClick = event => {
+    const handleOutsideClick = (event) => {
       if (modalRef.current && !modalRef.current.contains(event.target)) {
         onClose();
       }
     };
 
-    const handleEscapeKey = event => {
+    const handleEscapeKey = (event) => {
       if (event.key === 'Escape') {
         onClose();
       }
