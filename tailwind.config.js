@@ -8,8 +8,9 @@ export default {
 
     extend: {
       colors: {
-        customYellowDark: '#feaf00',
-        customYellowLight: '#f8d442',
+        YellowDark: '#feaf00',
+        YellowLight: '#f8d442',
+        SidebarBg: '#e7e5e4',
       },
     },
   },
