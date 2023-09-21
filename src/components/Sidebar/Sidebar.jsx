@@ -5,7 +5,7 @@ import NavLinks from './NavLinks';
 
 const Sidebar = () => {
   return (
-    <div className="w-[270px] min-h-screen bg-stone-200">
+    <div className="sticky top-0 left-0 flex flex-col items-center justify-between w-64 md:w-72 h-screen bg-SidebarBg p-4 overflow-y-auto z-10">
       <Logo />
       <Profile />
       <NavLinks />
