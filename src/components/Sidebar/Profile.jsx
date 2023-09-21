@@ -5,7 +5,7 @@ const Profile = () => {
   return (
     <div className="w-56 md:w-64 h-40 md:h-48 flex flex-col items-center justify-center">
       <img
-        className="rounded-full w-24 h-24 md:w-32 md:h-32"
+        className="rounded-full w-24 h-24 md:w-40 md:h-40"
         src={Portrait}
         alt="Avatar"
       />
