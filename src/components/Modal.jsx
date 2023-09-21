@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from 'react';
 
-function Modal({ children, isOpen, onClose }) {
+function Modal({ title, children, isOpen, onClose }) {
   const modalRef = useRef(null);
 
   useEffect(() => {
@@ -35,8 +35,9 @@ function Modal({ children, isOpen, onClose }) {
   }
 
   return (
-    <div className="modal-overlay">
-      <div className="modal" ref={modalRef}>
+    <div className="fixed inset-0 flex justify-center items-center bg-black bg-opacity-50">
+      <div className="bg-white rounded-lg shadow-xl p-6 w-96" ref={modalRef}>
+        {title && <h2 className="text-2xl mb-4">{title}</h2>}
         {children}
       </div>
     </div>

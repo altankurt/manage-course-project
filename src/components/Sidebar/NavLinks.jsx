@@ -13,11 +13,11 @@ import {
 const NavLinks = () => {
   const links = [
     { to: '/dashboard', icon: <Home />, label: 'Home' },
-    { to: '/dashboard/course', icon: <Course />, label: 'Course' },
+    { to: '/dashboard/#', icon: <Course />, label: 'Course' },
     { to: '/dashboard/students', icon: <Student />, label: 'Students' },
-    { to: '/dashboard/payment', icon: <Payment />, label: 'Payment' },
-    { to: '/dashboard/report', icon: <Report />, label: 'Report' },
-    { to: '/dashboard/settings', icon: <Settings />, label: 'Settings' },
+    { to: '/dashboard/#', icon: <Payment />, label: 'Payment' },
+    { to: '/dashboard/#', icon: <Report />, label: 'Report' },
+    { to: '/dashboard/#', icon: <Settings />, label: 'Settings' },
     { to: '/#', icon: <Logout />, label: 'Logout', extraClass: 'mt-28' },
   ];
 

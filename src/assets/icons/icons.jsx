@@ -12,3 +12,4 @@ export { StudentCard } from './studentCard.jsx';
 export { Payment } from './payment.jsx';
 export { PaymentCard } from './paymentCard.jsx';
 export { Users } from './users.jsx';
+export { UsersCard } from './usersCard.jsx';

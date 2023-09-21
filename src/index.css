@@ -14,4 +14,8 @@
   .navBtn {
     @apply flex items-center h-10 font-medium;
   }
+
+  .modal-overlay {
+    @apply fixed inset-0 flex justify-center items-center bg-black bg-opacity-50;
+  }
 }

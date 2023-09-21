@@ -7,7 +7,7 @@ export function LogoIcon() {
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
     >
-      <path d="M3 0L3 39" stroke="#F8D442" stroke-width="6" />
+      <path d="M3 0L3 39" stroke="#F8D442" strokeWidth="6" />
     </svg>
   );
 }
