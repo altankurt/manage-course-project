@@ -1,4 +1,4 @@
-export function graduationCapCard() {
+export function StudentCard() {
   return (
     <svg
       width="48"

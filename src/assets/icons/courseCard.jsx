@@ -1,4 +1,4 @@
-export function BookmarkCard() {
+export function CourseCard() {
   return (
     <svg
       width="28"

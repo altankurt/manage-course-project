@@ -1,4 +1,4 @@
-export function usdCard() {
+export function PaymentCard() {
   return (
     <svg
       width="35"
