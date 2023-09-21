@@ -12,6 +12,6 @@
 
 @layer components {
   .navBtn {
-    @apply flex items-center h-10 text-black text-base font-medium;
+    @apply flex items-center h-10 font-medium;
   }
 }
