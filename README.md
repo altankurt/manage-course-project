@@ -11,7 +11,7 @@ A comprehensive platform built with React and powered by Vite for enhanced perfo
 - [Usage](#usage)
 - [Contributing](#contributing)
 - [License](#License)
-- [Author](#Author)
+- [Contact With](#Contact-With)
 
 ## Features
 
@@ -86,9 +86,9 @@ Contributions, issues, and feature requests are welcome! Feel free to check [iss
 
 This project is licensed under the MIT license. For more information, see the LICENSE file.
 
-## Author
-
-- [Website](https://altankurt.dev)
+## Contact With
+- [hello@altankurt.dev](mailto:hello@altankurt.dev)
+- [altankurt.dev](https://altankurt.dev)
 - [LinkedIn](https://www.linkedin.com/in/altankurt/)
 - [Twitter](https://www.twitter.com/aaltankurt)
 - [Medium](https://medium.com/@altankurt)
