@@ -6,9 +6,12 @@ A comprehensive platform built with React and powered by Vite for enhanced perfo
 
 - [Features](#features)
 - [Technologies Used](#technologies-used)
+- [Login Credentials](#Login-Credentials)
 - [Installation](#installation)
 - [Usage](#usage)
 - [Contributing](#contributing)
+- [License](#License)
+- [Author](#Author)
 
 ## Features
 
@@ -52,13 +55,13 @@ A comprehensive platform built with React and powered by Vite for enhanced perfo
 git clone https://github.com/altankurt/student-course-hub.git
 ```
 
-2.Navigate to the project directory:
+2. Navigate to the project directory:
 
 ```bash
 cd student-course-hub
 ```
 
-3.Install the dependencies:
+3. Install the dependencies:
 
 ```bash
 npm install
@@ -72,7 +75,12 @@ npm run dev
 
 ## Usage
 
-You can run the project locally or on a live server.
+Open your browser and navigate to `http://localhost:5173`
+
+## Contributing
+
+Contributions, issues, and feature requests are welcome! Feel free to check [issues page](https://github.com/altankurt/student-course-hub/issues).
+ We can discuss further there.
 
 ## License
 
